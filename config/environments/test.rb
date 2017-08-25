@@ -10,7 +10,8 @@ Rails.application.configure do
   # Do not eager load code on boot. This avoids loading your whole application
   # just for the purpose of running a single test. If you are using a tool that
   # preloads Rails for running tests, you may have to set it to true.
-  config.eager_load = false
+  # config.eager_load = false
+  config.eager_load = defined?(SimpleCov).present?
 
   # Configure public file server for tests with Cache-Control for performance.
   config.public_file_server.enabled = true
@@ -33,6 +34,11 @@ Rails.application.configure do
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
+
+  # Ensure mailer works in test
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.asset_host = 'http://localhost:3000'
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr

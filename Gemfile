@@ -5,18 +5,27 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.0.2'
-gem 'pg'
-gem 'puma', '~> 3.0'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
-gem 'jquery-rails'
-gem 'jbuilder', '~> 2.5'
-gem 'bcrypt', '~> 3.1.7'
-gem 'normalize-rails'
-gem 'friendly_id'
+gem 'active_type'
+gem 'autoprefixer-rails'
+gem 'bootsnap', require: false
+gem 'coffee-rails'
+gem 'dotenv-rails'
 gem "haml-rails"
+gem 'jquery-rails'
+gem 'marco-polo'
+gem 'normalize-rails'
+gem 'pg'
+gem 'pgcli-rails'
+gem 'puma'
+gem 'rails'
+gem 'sass-rails'
+gem 'secure_headers'
+gem 'sidekiq'
+gem 'turbolinks'
+gem 'uglifier'
+# gem 'jbuilder'
+# gem 'bcrypt'
+# gem 'friendly_id'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -26,6 +35,7 @@ group :development, :test do
   gem 'psych'
   gem 'faker'
 end
+
 group :test do
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem 'capybara'
@@ -38,10 +48,22 @@ group :test do
 end
 
 group :development do
+  gem 'annotate'
+  gem 'awesome_print'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'brakeman', require: false
+  gem 'bundler-audit'
+  gem 'letter_opener'
   gem 'listen'
   gem 'guard'
-  gem 'guard-zeus'
-  gem 'rack-livereload'
-  gem 'guard-rspec', require: false
+  gem 'guard-livereload'
   gem 'guard-rails', require: false
+  gem 'guard-rspec', require: false
+  gem 'guard-zeus'
+  gem 'overcommit'
+  gem 'rack-livereload'
+  gem 'rubocop'
+  gem 'simplecov'
+  gem 'xray-rails'
 end
