@@ -8,9 +8,12 @@ end
 gem 'active_type'
 gem 'autoprefixer-rails'
 gem 'bootsnap', require: false
+gem 'bootstrap'
+gem 'cancancan'
 gem 'coffee-rails'
+gem 'devise'
 gem 'dotenv-rails'
-gem "haml-rails"
+gem 'haml-rails'
 gem 'jquery-rails'
 gem 'marco-polo'
 gem 'normalize-rails'
@@ -31,20 +34,9 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'letter_opener'
   gem 'pry'
-  gem 'guard-livereload', '~> 2.5', require: false
+  gem 'guard-livereload', require: false
   gem 'psych'
   gem 'faker'
-end
-
-group :test do
-  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
-  gem 'capybara'
-  gem 'poltergeist'
-  gem "factory_girl_rails", "~> 4.0"
-  gem 'database_cleaner'
-  gem 'rails-controller-testing'
-  gem 'selenium-webdriver', '2.53.4'
-  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
@@ -66,4 +58,15 @@ group :development do
   gem 'rubocop'
   gem 'simplecov'
   gem 'xray-rails'
+end
+
+group :test do
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
+  gem 'selenium-webdriver'
+  gem 'rspec-rails'
 end
